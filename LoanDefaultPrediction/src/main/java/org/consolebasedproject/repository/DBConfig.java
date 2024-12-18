@@ -1,7 +1,6 @@
-package repository;
+package org.consolebasedproject.repository;
 import java.sql.*;
 import java.util.Properties;
-import org.apache.log4j.*;
 import java.io.*;
 
 public class DBConfig {
@@ -11,22 +10,26 @@ public class DBConfig {
 	protected static ResultSet rs;
 	protected static CallableStatement cstmt;
 	
+			
 	private DBConfig()
 	{
 		//connection logic
 		try {
 			File fp = new File("");
 			String path = fp.getAbsolutePath();
-			FileInputStream inputStream = new FileInputStream(path+"\\src\\main\\resources\\dbconfig.properties");
-			Properties  p = new Properties();
-			p.load(inputStream);
+//			FileInputStream inputStream = new FileInputStream("C:\\Users\\Admin\\git\\Defult-Price-Predection-VC\\LoanDefaultPrediction\\src\\main\\resources\\dbconfig.properties");
+//			C:\Users\Admin\git\Defult-Price-Predection-VC\LoanDefaultPrediction\src\main\resources\dbconfig
+//			Properties  p = new Properties();
+//			p.load(inputStream);
 			
-			String driverClassName = p.getProperty("driver");
-			String userName = p.getProperty("username");
-			String password = p.getProperty("password");
-			String url = p.getProperty("url");
-			Class.forName(driverClassName);
-			conn = DriverManager.getConnection(url,userName,password);
+//			String driverClassName = p.getProperty("driver");
+//			String userName = p.getProperty("username");
+//			String password = p.getProperty("password");
+//			String url = p.getProperty("url");
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+//			Class.forName(driverClassName);
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/loan_default_prediction","root","root");
 			if(conn != null)
 			{
 				System.out.println("Database connected succesffully..");
@@ -36,8 +39,8 @@ public class DBConfig {
 			System.out.println("Database is Not Connected");
 		}
 		catch(Exception ex) {
-			System.out.println("We found Error in DBConfig");
-			System.out.println("Error in DBConfig");
+			System.out.println("We found Error in DBConfig:"+ex);
+			System.out.println("Error in DBConfig "+ex.getCause());
 		}
 
 	}
@@ -63,9 +66,6 @@ public class DBConfig {
 		return cstmt;
 	}
 }
-
-
-
 
 
 
