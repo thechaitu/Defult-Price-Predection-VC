@@ -7,4 +7,6 @@ public interface BorrowerService {
 	public boolean isUpdatePhoneNumb(String currBName,String idProof,String newBPhoneNumb);
 	
 	public boolean isUpdateEmailAdrs(String currBName,String idProof,String newEmailAdrs);
+	
+	public int getBorrowerId(String idproof);
 }

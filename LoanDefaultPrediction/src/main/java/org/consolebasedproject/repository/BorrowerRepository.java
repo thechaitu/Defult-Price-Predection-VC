@@ -10,4 +10,6 @@ public interface BorrowerRepository {
 	public int getBorrowerIdByNameIdProof(String currBName,String idProof); //to get borrower id
 	public boolean isUpdatePhoneNumb(String currBName,String idProof,String newBPhoneNumb);//to update phone number of borrower
 	public boolean isUpdateEmailAdrs(String currBName,String idProof,String newEmailAdrs);
+	
+	public int getBorrowerId(String idproof);
 }

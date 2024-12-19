@@ -29,7 +29,7 @@ public class DBConfig {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 //			Class.forName(driverClassName);
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/loan_default_prediction","root","root");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/loandefaultprediction","root","root");
 			if(conn != null)
 			{
 				System.out.println("Database connected succesffully..");

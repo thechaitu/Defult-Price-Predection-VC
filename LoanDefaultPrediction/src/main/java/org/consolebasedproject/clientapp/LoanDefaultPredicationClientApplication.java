@@ -11,8 +11,8 @@ public class LoanDefaultPredicationClientApplication {
 			
 			System.out.println("\n1:To display all borrowers");
 			System.out.println("2:To update borrower contact number");
-			System.out.println("3:To update borrower email address");
-			System.out.println("4:To exit");
+			System.out.println("3:To update borrower email address ");
+			System.out.println("4:To exit \n5.Get Id of borrower");
 			
 			System.out.println("Enter your choice");
 			int choice = sc.nextInt();
@@ -56,6 +56,14 @@ public class LoanDefaultPredicationClientApplication {
 							System.out.println("Email Address Updated Successfully....");
 						else
 							System.out.println("Email Address Not Updated");
+						break;
+					case 5:
+						sc.nextLine();
+						System.out.println("Enter Id proof number to delete record");
+						String idno = sc.nextLine();
+						int bid=borrowerService.getBorrowerId(idno);
+						System.out.println("The borrower id is "+bid);
+						
 						break;
 					case 4: System.exit(0);
 						break;
