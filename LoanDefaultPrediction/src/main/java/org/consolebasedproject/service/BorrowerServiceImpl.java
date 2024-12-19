@@ -13,4 +13,16 @@ public class BorrowerServiceImpl implements BorrowerService{
 	public List<BorrowerModel> getAllBorrowers() {
 		return bsRepo.getAllBorrowers();
 	}
+
+	
+	@Override
+	public boolean isUpdatePhoneNumb(String currBName, String idProof, String newBPhoneNumb) {
+		return bsRepo.isUpdatePhoneNumb(currBName,idProof,newBPhoneNumb);
+	}
+
+
+	@Override
+	public boolean isUpdateEmailAdrs(String currBName, String idProof, String newEmailAdrs) {
+		return bsRepo.isUpdateEmailAdrs(currBName, idProof, newEmailAdrs);
+	}
 }
