@@ -25,4 +25,10 @@ public class BorrowerServiceImpl implements BorrowerService{
 	public boolean isUpdateEmailAdrs(String currBName, String idProof, String newEmailAdrs) {
 		return bsRepo.isUpdateEmailAdrs(currBName, idProof, newEmailAdrs);
 	}
+	
+	@Override
+	public int getBorrowerId(String idproof) {
+		return bsRepo.getBorrowerId(idproof);
+	}
+
 }

@@ -95,6 +95,24 @@ public class BorrowerRepositoryImpl extends DBState  implements BorrowerReposito
 		}
 	}
 
+	@Override
+	public int getBorrowerId(String idproof) {
+		try {
+			stmt = conn.prepareStatement(Query.getId);
+			stmt.setString(1, idproof);
+			rs = stmt.executeQuery();
+
+			if (rs.next())
+				return rs.getInt(1);
+			else
+				return -1;
+
+		} catch (Exception e) {
+			System.out.println("Error is " + e.getMessage());
+			return -1;
+		}
+	}
+
 	
 
 }
